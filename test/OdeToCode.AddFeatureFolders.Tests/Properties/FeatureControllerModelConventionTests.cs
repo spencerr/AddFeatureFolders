@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using Xunit;
 using System.Reflection;
 using Controllers;
 using Project.Name.Features;
 using Project.Name.Features.Admin.ManageGolfers;
 using Project.Name.Features.Foo.Bar.Baz;
-using static Xunit.Assert;
+using NUnit.Framework;
 
 namespace OdeToCode.AddFeatureFolders.Tests
 {
+    [TestFixture]
     public class FeatureControllerModelConventionTests
     {
-        [Theory]
-        [InlineData(typeof(ManageGolfersController), @"Features\Admin\ManageGolfers")]
-        [InlineData(typeof(ManageUsersController), @"Features\Foo\Bar\Baz")]
-        [InlineData(typeof(HomeController), @"Features")]
-        [InlineData(typeof(AboutController), @"")]
+        [TestCase(typeof(ManageGolfersController), @"Features\Admin\ManageGolfers")]
+        [TestCase(typeof(ManageUsersController), @"Features\Foo\Bar\Baz")]
+        [TestCase(typeof(HomeController), @"Features")]
+        [TestCase(typeof(AboutController), @"")]
         public void CanBuildPathFromControllerNamespace(Type controller, string expected)
         {
             var options = new FeatureFolderOptions();
@@ -28,10 +27,10 @@ namespace OdeToCode.AddFeatureFolders.Tests
 
             service.Apply(model);
 
-            Equal(expected, model.Properties["feature"]);
+            Assert.AreEqual(expected, model.Properties["feature"]);
         }
 
-        [Fact]
+        [Test]
         public void CanUseCustomDerivationStrategy()
         {
             var options = new FeatureFolderOptions()
@@ -45,7 +44,7 @@ namespace OdeToCode.AddFeatureFolders.Tests
 
             service.Apply(model);
 
-            Equal(@"Features\Foo", model.Properties["feature"]);
+            Assert.AreEqual(@"Features\Foo", model.Properties["feature"]);
         }
     }
 }

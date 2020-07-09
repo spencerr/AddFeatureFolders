@@ -1,21 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net452;netcoreapp1.1;netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp5.0</TargetFrameworks>
     <AssemblyName>OdeToCode.AddFeatureFolders.Tests</AssemblyName>
     <PackageId>OdeToCode.AddFeatureFolders.Tests</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\OdeToCode.AddFeatureFolders\OdeToCode.AddFeatureFolders.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0-preview-20200519-01" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0-beta.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
-    <PackageReference Include="xunit" Version="2.3.1" />
+    <ProjectReference Include="..\..\src\OdeToCode.AddFeatureFolders\OdeToCode.AddFeatureFolders.csproj" />
   </ItemGroup>
-
-  
-
 </Project>
