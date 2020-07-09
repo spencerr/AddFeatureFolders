@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Use feature folders to organize controllers and views in ASP.NET Core</Description>
     <Copyright>OdeToCode LLC</Copyright>
-    <VersionPrefix>2.0.3</VersionPrefix>
+    <VersionPrefix>2.0.4</VersionPrefix>
     <Authors>K. Scott Allen</Authors>
     <TargetFrameworks>netcoreapp5.0</TargetFrameworks>
     <AssemblyName>OdeToCode.AddFeatureFolders</AssemblyName>
